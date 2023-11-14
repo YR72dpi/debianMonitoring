@@ -1,0 +1,10 @@
+- name: Install and run Node Exporter
+  hosts: all
+  become: yes
+  vars:
+    pip_install_packages:
+      - name: docker
+
+  roles:
+    # - geerlingguy.pip
+    - geerlingguy.docker
