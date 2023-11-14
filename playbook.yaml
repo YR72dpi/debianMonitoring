@@ -8,3 +8,5 @@
   roles:
     # - geerlingguy.pip
     - geerlingguy.docker
+
+    # Task pour git clone le repo et lancer le docker compose
