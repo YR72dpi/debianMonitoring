@@ -17,7 +17,6 @@ services:
 
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
-    container_name: node_exporter
     command:
       - '--path.rootfs=/host'
     network_mode: host
@@ -41,15 +40,19 @@ services:
       - '--web.enable-lifecycle'
     ports:
       - "9090:9090"
+    depends_on: 
+      - cadvisor
+      - node_exporter
 
   grafana:
-    # container_name: grafana
     ports: 
         - 9200:3000
     image: grafana/grafana
     restart: always
     volumes:
       - grafana-data:/var/lib/grafana
+    depends_on: 
+      - prometheus
 
 volumes:
   prometheus_data:
