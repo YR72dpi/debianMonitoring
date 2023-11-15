@@ -1,4 +1,4 @@
-- name: Install and run Node Exporter
+- name: Install a Monitoring Stack
   hosts: all
   become: yes
   vars:
@@ -9,4 +9,36 @@
     # - geerlingguy.pip
     - geerlingguy.docker
 
-    # Task pour git clone le repo et lancer le docker compose
+  tasks:
+    - name: Delete monitoring path
+      command: rm -rf /srv/monitoring
+
+    - name: Create a monitoring path
+      command: mkdir /srv/monitoring
+
+    - name: Git clone
+      ansible.builtin.git:
+        repo: 'https://github.com/YR72dpi/debianMonitoring.git'
+        dest: /srv/monitoring
+
+    - name: Install Docker-py
+      command: pip install docker
+
+    - name: Install Docker-Compose-py
+      command: pip install docker-compose
+
+    - name: Tear down existing services
+      community.docker.docker_compose:
+        project_src: /srv/monitoring
+        state: absent
+
+    - name: Create and start services
+      community.docker.docker_compose:
+        project_src: /srv/monitoring
+        state: present
+      register: output
+    
+    - name: Show results
+      ansible.builtin.debug:
+        var: output
+
