@@ -22,7 +22,7 @@ prometheus -- PORT 8090 --> cAdvisor
 prometheus -- PORT 9100 --> node_exporter 
 prometheus -- PORT 9090 --> prometheus 
 grafana -- PORT 9090 --> prometheus 
-computer -- [SERVER IP] PORT 9200 --> grafana 
+computer -- SERVER_IP PORT 9200 --> grafana 
 ```
 
 ## Grafana IP
