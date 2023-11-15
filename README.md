@@ -1,4 +1,4 @@
-En cours de dev
+The 1.0.0 doesn't work !
 
 # Monitoring Debian
 Simple ansible and Docker stack for install [cAdvisor](https://github.com/google/cadvisor) and [node_exporter](https://github.com/prometheus/node_exporter)
