@@ -42,3 +42,6 @@
       ansible.builtin.debug:
         var: output
 
+    - name: Information Grafana
+      ansible.builtin.debug:
+        msg: "Go to [YOUR IP]:9200"
