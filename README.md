@@ -18,11 +18,11 @@ cAdvisor(cAdvisor)
 node_exporter(node_exporter) 
 computer[Your computer] 
 
-prometheus -- PORT 8090 --> cAdvisor 
-prometheus -- PORT 9100 --> node_exporter 
-prometheus -- PORT 9090 --> prometheus 
-grafana -- PORT 9090 --> prometheus 
-computer -- SERVER_IP PORT 9200 --> grafana 
+prometheus -- :8090 --> cAdvisor 
+prometheus -- :9100 --> node_exporter 
+prometheus -- :9090 --> prometheus 
+grafana -- :9090 --> prometheus 
+computer -- SERVER_IP:9200 --> grafana 
 ```
 
 ## Grafana IP
