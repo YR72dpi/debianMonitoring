@@ -1,4 +1,4 @@
-The 1.0.0 doesn't work
+The 1.0.0 doesn't work !
 
 # Monitoring Debian
 Simple ansible and Docker stack for install [cAdvisor](https://github.com/google/cadvisor) and [node_exporter](https://github.com/prometheus/node_exporter)
@@ -11,23 +11,23 @@ Ansible gonna install docker and all dependencies needed, clone this repository 
 
 ## Architecture
 ```mermaid
-graph LR
-grafana{Grafana}
-prometheus{Prometheus}
-cAdvisor(cAdvisor)
-node_exporter(node_exporter)
-computer[Your computer]
+graph LR;
+grafana{Grafana};
+prometheus{Prometheus};
+cAdvisor(cAdvisor);
+node_exporter(node_exporter);
+computer[Your computer];
 
-prometheus --8090--> cAdvisor
-prometheus --9100--> node_exporter
-prometheus --9090--> prometheus
-grafana --9090--> prometheus
-computer --[SERVER IP]9200--> grafana
+prometheus --> cAdvisor;
+prometheus --> node_exporter;
+prometheus --> prometheus;
+grafana --> prometheus;
+computer --> grafana;
 ```
 
 ## Grafana IP
 
-``[SERVER IP]:9200``
+``[YOUR IP]:9200``
 
 ## Grafana Panel ID
 
