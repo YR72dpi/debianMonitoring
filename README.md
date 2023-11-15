@@ -18,11 +18,11 @@ cAdvisor(cAdvisor);
 node_exporter(node_exporter);
 computer[Your computer];
 
-prometheus --8090--> cAdvisor;
-prometheus --9100--> node_exporter;
-prometheus --9090--> prometheus;
-grafana --9090--> prometheus;
-computer --[SERVER IP]9200--> grafana;
+prometheus --> cAdvisor;
+prometheus --> node_exporter;
+prometheus --> prometheus;
+grafana --> prometheus;
+computer --> grafana;
 ```
 
 ## Grafana IP
