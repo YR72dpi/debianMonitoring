@@ -11,7 +11,7 @@ Ansible gonna install docker and all dependencies needed, clone this repository 
 
 ## Architecture
 ```mermaid
-graph LR
+graph BT
 grafana{Grafana} 
 prometheus{Prometheus} 
 cAdvisor(cAdvisor) 
