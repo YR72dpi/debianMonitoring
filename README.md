@@ -19,10 +19,10 @@ node_exporter(node_exporter)
 computer[Your computer]
 
 subgraph Server
-    prometheus --:8090--> cAdvisor
-    prometheus --:9100--> node_exporter
-    prometheus --:9090--> prometheus
-    grafana --:9090--> prometheus
+    prometheus --:8090--> cAdvisor;
+    prometheus --:9100--> node_exporter;
+    prometheus --:9090--> prometheus;
+    grafana --:9090--> prometheus;
 end
 
 computer --[SERVER IP]:9200--> grafana
